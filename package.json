@@ -1,0 +1,22 @@
+{
+  "name": "fitness-tracker-4-you",
+  "version": "1.0.0",
+  "description": "* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cgordon-bee/fitness-tracker-4-you.git"
+  },
+  "author": "C Gordon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cgordon-bee/fitness-tracker-4-you/issues"
+  },
+  "homepage": "https://github.com/Cgordon-bee/fitness-tracker-4-you#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
