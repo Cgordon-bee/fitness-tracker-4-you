@@ -1,45 +1,45 @@
-const API = {
-    async getLastWorkout() {
-      let res;
-      try {
-        res = await fetch("/api/workouts");
-      } catch (err) {
-        console.log(err)
-      }
-      const json = await res.json();
+const express = require('express');
+const logger = require ('morgan');
+const mongroose = require('mongoose');
+const mongodb = require("mongodb");
+const router = require ('express')
+
+
+// const router = require ('./controller')
+const app = express();
+
+const PORT = process.env.PORT || 3001;
+
+
+
+// app.use(logger ("dev"));
+
+
+
+
+
+// starting the server
+ 
+app.use (function (req, res) {
+    res.send('I am here');
+    console.log ("server sucessfully connected");
+  });
+   
+  app.listen(3001);
+      
+
+
   
-      return json[json.length - 1];
-    },
-    async addExercise(data) {
-      const id = location.search.split("=")[1];
+
+// connection to the mongodb accessing database
+// mongoose.connect(
+//     process.env.MONGODB_URI || 'mongodb://localhost/fitnessdb.workoutdb',
+//     {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//       useCreateIndex: true,
+//       useFindAndModify: false
+//     }
+//   );
   
-      const res = await fetch("/api/workouts/" + id, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-  
-      const json = await res.json();
-  
-      return json;
-    },
-    async createWorkout(data = {}) {
-      const res = await fetch("/api/workouts", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
-      });
-  
-      const json = await res.json();
-  
-      return json;
-    },
-  
-    async getWorkoutsInRange() {
-      const res = await fetch(`/api/workouts/range`);
-      const json = await res.json();
-  
-      return json;
-    },
-  };
   

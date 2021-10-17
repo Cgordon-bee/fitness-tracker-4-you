@@ -82,4 +82,4 @@ async function initWorkout() {
   }
   
   initWorkout();
-  
+  // do we need to use the export module?

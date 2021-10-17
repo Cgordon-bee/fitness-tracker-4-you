@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Cgordon-bee/fitness-tracker-4-you#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.11",
+    "morgan": "^1.10.0"
   }
 }
