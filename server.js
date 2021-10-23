@@ -1,8 +1,8 @@
 const express = require('express');
 const logger = require ('morgan');
-const mongroose = require('mongoose');
-const mongodb = require("mongodb");
-const router = require ('express');
+const mongoose = require('mongoose');
+const { urlencoded } = require('express');
+
 
 // const Schema = require('')
 
@@ -12,35 +12,45 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
+// 
+app.use(logger ("dev"));
+app.use (express.json())
+app.use(express.urlencoded({ extended: true }));
 
-// app.use(logger ("dev"));
+// app.use('/api', api);
 
+app.use(express.static('public'));
+
+
+
+
+
+//  connection to the mongodb accessing database
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/workout',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 
 
 
 // starting the server
  
-app.use (function (req, res) {
-    res.send('Hello World');
-    console.log ("server sucessfully connected");
-  });
    
-  app.listen(3001);
+  app.listen(PORT, ()=> {
+console.log("connected successfully")
+
+
+  }) 
       
 
 
   
 
-// connection to the mongodb accessing database
-// mongoose.connect(
-//     process.env.MONGODB_URI || 'mongodb://localhost/fitnessdb.workoutdb',
-//     {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//       useCreateIndex: true,
-//       useFindAndModify: false
-//     }
-//   );
-  
+ 
   
